@@ -9,8 +9,15 @@ st.title('Streamlit 超入門')
 
 st.write('Interractive Widgets')
 
-text = st.sidebar.text_input('あなたの趣味を教えてください。',)
-conditon = st.sidebar.slider('あなたの今の調子は？', 0, 100, 50)
+left_column, right_column = st.columns(2)
 
-'あなたの趣味：', text
-'コンディション：', conditon
+button = left_column.button('右カラムに文字表示')
+if button:
+    right_column.write('ここは右カラム')
+
+
+# text = st.text_input('あなたの趣味を教えてください。',)
+# conditon = st.slider('あなたの今の調子は？', 0, 100, 50)
+
+# 'あなたの趣味：', text
+# 'コンディション：', conditon
